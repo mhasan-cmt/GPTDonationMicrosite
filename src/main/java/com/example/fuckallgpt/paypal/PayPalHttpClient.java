@@ -1,10 +1,10 @@
 package com.example.fuckallgpt.paypal;
+import com.example.fuckallgpt.paypal.config.PaypalConfig;
+import com.example.fuckallgpt.paypal.dto.AccessTokenResponseDTO;
+import com.example.fuckallgpt.paypal.dto.ClientTokenDTO;
+import com.example.fuckallgpt.paypal.dto.OrderDTO;
+import com.example.fuckallgpt.paypal.dto.OrderResponseDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ubetgpt.betgpt.paypal.config.PaypalConfig;
-import com.ubetgpt.betgpt.paypal.dto.AccessTokenResponseDTO;
-import com.ubetgpt.betgpt.paypal.dto.ClientTokenDTO;
-import com.ubetgpt.betgpt.paypal.dto.OrderDTO;
-import com.ubetgpt.betgpt.paypal.dto.OrderResponseDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -18,7 +18,8 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-import static com.ubetgpt.betgpt.paypal.PayPalEndpoints.*;
+import static com.example.fuckallgpt.paypal.PayPalEndpoints.*;
+
 
 @Component
 @Slf4j

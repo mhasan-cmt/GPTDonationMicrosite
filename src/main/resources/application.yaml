@@ -8,3 +8,8 @@ spring:
     url: jdbc:mysql://localhost:3306/${DB_NAME}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
+
+paypal:
+  baseUrl: https://api-m.sandbox.paypal.com
+  clientId: ARnqlr0WMxXg3DQ83L4GpdYDIZ5PMEg-vGIOgEppzFN9drngm6Qm20OQJWu6vRvXe2nHR1QYbIqFY18u
+  secret: EF1AkV18uAn1GICIa9KpoC_Jxkdpzv6k75X3ocqCvf7L5a7JV5CxC9HXAXtO_21HtjcOSLMfzF5Kl_lQ
