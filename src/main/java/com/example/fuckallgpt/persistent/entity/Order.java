@@ -15,6 +15,8 @@ public class Order {
     private Long id;
     @Column(name = "order_id")
     private String orderId;
+    @Column(name = "donor_name")
+    private String donorName;
     @Column(name = "order_status")
     private String orderStatus;
     @Column(name = "approve_url")

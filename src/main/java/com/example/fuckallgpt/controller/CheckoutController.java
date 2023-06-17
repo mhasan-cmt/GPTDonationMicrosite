@@ -45,6 +45,7 @@ public class CheckoutController {
         var entity = new Order();
         entity.setOrderId(orderResponse.getId());
         entity.setOrderStatus(orderResponse.getStatus().toString());
+        entity.setDonorName(orderRequest.donorName());
         entity.setCreatedAt(LocalDate.now());
         entity.setDonationType(orderRequest.donationType());
         orderResponse.getLinks().forEach(linkDTO -> {
