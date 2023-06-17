@@ -1,4 +1,6 @@
 package com.example.fuckallgpt.paypal.dto;
 
-public record OrderRequest(String subscriptionPackage) {
+import com.example.fuckallgpt.enumerated.DonationType;
+
+public record OrderRequest(DonationType donationType) {
 }
