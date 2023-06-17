@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Controller
@@ -29,11 +30,10 @@ public class CheckoutController {
     public ResponseEntity<OrderResponseDTO> checkout(@RequestBody OrderRequest orderRequest) throws Exception {
         var orderDTO = new OrderDTO();
         orderDTO.setIntent(OrderIntent.CAPTURE);
-//        TODO: Set Pricing according to pricing type
-//        orderDTO.setPurchaseUnits(List.of(new PurchaseUnit(MoneyDTO.builder()
-//                .currencyCode("USD")
-//                .value(Objects.equals(orderRequest.subscriptionPackage(), "basic") ? "24.00" : "200.00")
-//                .build())));
+        orderDTO.setPurchaseUnits(List.of(new PurchaseUnit(MoneyDTO.builder()
+                .currencyCode("USD")
+                .value(orderService.getPricesByDonationType(orderRequest.donationType()))
+                .build())));
         var appContext = new PayPalAppContextDTO();
         appContext.setReturnUrl("http://localhost:8088/checkout/success");
         appContext.setCancelUrl("http://localhost:8088/checkout/cancel");
