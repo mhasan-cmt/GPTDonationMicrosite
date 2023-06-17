@@ -1,0 +1,140 @@
+
+body{
+    background-color: black;
+    color: white;
+}
+.titile{
+    font-size: 50px;
+    color: #FFEB00;
+    margin-top: 40px;
+}
+.description{
+    margin-top: 20px;
+}
+.body{
+    margin-top: 20px;
+}
+.input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input-box label{
+    color: #1EF97B;
+}
+.input-box input{
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid white;
+    width: 40%;
+    text-align: center;
+    padding: 5px;
+    color: white;
+}
+.price-group{
+    margin: 30px auto;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+.price-box:nth-child(2){
+    color: #5FC1ED;
+}
+.price-box:nth-child(2) > div{
+    border: 1px solid #5FC1ED;
+}
+.price-box:nth-child(3){
+    color: #7DFB91;
+}
+.price-box:nth-child(3) > div{
+    border: 1px solid #7DFB91;
+}
+.price-box:nth-child(4){
+    color: #DA396E;
+}
+.price-box:nth-child(4) > div{
+    border: 1px solid #DA396E;
+}
+.price-box > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.price-box > div > p{
+    margin: 0;
+    margin-left: 10px;
+}
+.price-box > h3{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+.doner-title{
+    font-size: 15px;
+    color: #FC0C1A;
+    margin-top: 20px;
+    text-align: center;
+}
+.doner-section{
+    margin-top: 100px;
+}
+.doner-general{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.doner-general .general-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.doner-general .general-title i{
+    margin-right: 10px;
+}
+.doner-general h3{
+    font-size: 20px;
+    font-weight: 400;
+}
+.doner-general .general-title h3{
+    margin: 0;
+    font-size: 20px;
+}
+.doner-general-users{
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0px 10px;
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 40px;
+}
+.doner-general-users > h3 {
+    margin-right: 70px;
+    text-align: center;
+}
+.doner-captain-users{
+    margin: 0px auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px 0px;
+    width: 40%;
+}
+.doner-captain-users > h3{
+    text-align: center;
+}
+.doner-sergeant-users{
+    margin: 0px auto;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    gap: 20px 0px;
+    width: 100%;
+}
+.doner-sergeant-users > h3{
+    text-align: center;
+}
