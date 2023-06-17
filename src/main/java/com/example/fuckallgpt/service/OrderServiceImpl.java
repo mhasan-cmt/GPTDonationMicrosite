@@ -1,8 +1,8 @@
 package com.example.fuckallgpt.service;
 
-import com.example.fuckallgpt.entity.Order;
+import com.example.fuckallgpt.persistent.entity.Order;
 import com.example.fuckallgpt.exceptions.NoOrderFoundException;
-import com.example.fuckallgpt.repository.OrderRepository;
+import com.example.fuckallgpt.persistent.repository.OrderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

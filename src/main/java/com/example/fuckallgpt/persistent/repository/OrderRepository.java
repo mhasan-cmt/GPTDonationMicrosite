@@ -1,6 +1,6 @@
-package com.example.fuckallgpt.repository;
+package com.example.fuckallgpt.persistent.repository;
 
-import com.example.fuckallgpt.entity.Order;
+import com.example.fuckallgpt.persistent.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

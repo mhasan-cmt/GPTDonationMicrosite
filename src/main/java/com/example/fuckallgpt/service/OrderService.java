@@ -1,6 +1,6 @@
 package com.example.fuckallgpt.service;
 
-import com.example.fuckallgpt.entity.Order;
+import com.example.fuckallgpt.persistent.entity.Order;
 
 public interface OrderService {
     Order saveOrder(Order order);

@@ -15,7 +15,7 @@ paypal:
   secret: EF1AkV18uAn1GICIa9KpoC_Jxkdpzv6k75X3ocqCvf7L5a7JV5CxC9HXAXtO_21HtjcOSLMfzF5Kl_lQ
 
 donations:
-  privatee: 20
-  sergeant: 200
-  captain: 100
-  general: 300
+  privatee: 1
+  sergeant: 5
+  captain: 10
+  general: 100

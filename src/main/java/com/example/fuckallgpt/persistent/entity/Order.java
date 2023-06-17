@@ -1,4 +1,4 @@
-package com.example.fuckallgpt.entity;
+package com.example.fuckallgpt.persistent.entity;
 
 import com.example.fuckallgpt.enumerated.DonationType;
 import jakarta.persistence.*;
