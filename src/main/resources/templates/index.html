@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
-            <form action="">
+            <form action="/checkout" method="post">
                 <h1 class="text-center titile">Fuck All GPT</h1>
                 <p class="text-center description">
                     If you got sick of GPTs, we will act.<br/>
@@ -27,43 +27,80 @@
                 <div class="body">
                     <div class="input-box">
                         <label for="donorsName">You name*</label>
-                        <input type="text" id="donorsName" placeholder="The name will be remembered"/>
+                        <input type="text" id="donorsName" name="donorsName" placeholder="The name will be remembered"/>
                     </div>
                     <div class="d-flex align-items-center justify-content-center my-3">
                         <input type="submit" class="btn btn-success" value="Submit">
                     </div>
                     <div class="price-group">
-                        <div class="price-box">
-                            <div class="price-title-box">
-                                <i class="fa-brands fa-paypal"></i>
-                                <p>Private</p>
+                        <input
+                                type="radio"
+                                name="donationType"
+                                id="private"
+                                value="PRIVATE"
+                                class="hide"
+                                checked
+                        />
+                        <label for="private" class="private">
+                            <div class="price-box">
+                                <div class="price-title-box">
+                                    <i class="fa-brands fa-paypal"></i>
+                                    <p>Private</p>
+                                </div>
+                                <h3 class="price">$1</h3>
                             </div>
-                            <h3 class="price">$1</h3>
-                        </div>
-                        <div class="price-box">
-                            <div class="price-title-box">
-                                <i class="fa-brands fa-paypal"></i>
-                                <p>Sergeant</p>
+                        </label>
+                        <input
+                                type="radio"
+                                name="donationType"
+                                id="sergeant"
+                                value="SERGEANT"
+                                class="hide"
+                        />
+                        <label for="sergeant" class="sergeant">
+                            <div class="price-box">
+                                <div class="price-title-box">
+                                    <i class="fa-brands fa-paypal"></i>
+                                    <p>Sergeant</p>
+                                </div>
+                                <h3 class="price">$5</h3>
                             </div>
-                            <h3 class="price">$5</h3>
-                        </div>
-                        <div class="price-box">
-                            <div class="price-title-box">
-                                <i class="fa-brands fa-paypal"></i>
-                                <p>Captain</p>
+                        </label>
+                        <input
+                                type="radio"
+                                name="donationType"
+                                id="captain"
+                                value="CAPTAIN"
+                                class="hide"
+                        />
+                        <label for="captain" class="captain">
+                            <div class="price-box">
+                                <div class="price-title-box">
+                                    <i class="fa-brands fa-paypal"></i>
+                                    <p>Captain</p>
+                                </div>
+                                <h3 class="price">$10</h3>
                             </div>
-                            <h3 class="price">$10</h3>
-                        </div>
-                        <div class="price-box">
-                            <div class="price-title-box">
-                                <i class="fa-brands fa-paypal"></i>
-                                <p>General</p>
+                        </label>
+                        <input
+                                type="radio"
+                                name="donationType"
+                                id="general"
+                                value="GENERAL"
+                                class="hide"
+                        />
+                        <label for="general" class="general">
+                            <div class="price-box">
+                                <div class="price-title-box">
+                                    <i class="fa-brands fa-paypal"></i>
+                                    <p>General</p>
+                                </div>
+                                <h3 class="price">$100</h3>
                             </div>
-                            <h3 class="price">$100</h3>
-                        </div>
+                        </label>
                     </div>
                     <div class="image d-flex justify-content-center">
-                        <img src="/image/image.png" alt="">
+                        <img src="/image/image.png" alt="Those who fought bravely against GPTs till the last">
                     </div>
 
                     <div class="doner-section">
@@ -73,9 +110,13 @@
                                 <i class="fa-solid fa-star"></i>
                                 <h3>General</h3>
                             </div>
-                            <div class="doner-general-users">
-                                <h3>Jimin Won</h3>
-                                <h3>user2</h3>
+                            <div class="doner-general-users grid-center"
+                                 th:if="${generalDonors == null || generalDonors.size() <= 0}">
+                                <h3 class="general m-0">Be The First General</h3>
+                            </div>
+                            <div class="doner-general-users"
+                                 th:unless="${generalDonors == null || generalDonors.size() <= 0}">
+                                <h3 class="general" th:each="general: ${generalDonors}" th:text="${general.getDonorName()}"></h3>
                             </div>
                         </div>
                         <div class="doner-general">
@@ -83,11 +124,13 @@
                                 <i class="fa-sharp fa-regular fa-golf-flag-hole"></i>
                                 <h3>Captain</h3>
                             </div>
-                            <div class="doner-captain-users">
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
+                            <div class="doner-captain-users grid-center"
+                                 th:if="${captainDonors == null || captainDonors.size() <= 0}">
+                                <h3 class="captain m-0">Be The First Captain</h3>
+                            </div>
+                            <div class="doner-captain-users"
+                                 th:unless="${captainDonors == null || captainDonors.size() <= 0}">
+                                <h3 class="captain" th:each="captain: ${captainDonors}" th:text="${captain.getDonorName()}"></h3>
                             </div>
                         </div>
                         <div class="doner-general">
@@ -95,27 +138,13 @@
                                 <i class="fa-solid fa-gem"></i>
                                 <h3>Sergeant</h3>
                             </div>
-                            <div class="doner-sergeant-users">
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
+                            <div class="doner-sergeant-users grid-center"
+                                 th:if="${sergeantDonors == null || sergeantDonors.size() <= 0}">
+                                <h3 class="sergeant m-0">Be The First Sergeant</h3>
+                            </div>
+                            <div class="doner-sergeant-users"
+                                 th:unless="${sergeantDonors == null || sergeantDonors.size() <= 0}">
+                                <h3 class="sergeant" th:each="sergeant: ${sergeantDonors}" th:text="${sergeant.getDonorName()}"></h3>
                             </div>
                         </div>
                     </div>

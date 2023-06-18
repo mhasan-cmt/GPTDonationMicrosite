@@ -1,28 +1,59 @@
 
-body{
+.hide {
+    position: absolute;
+    left: -10000px;
+}
+
+input[type=radio]:checked + .private .price-box > div {
+    background-color: #ffffff;
+    color: black;
+}
+
+input[type=radio]:checked + .sergeant .price-box > div {
+    background-color: #5FC1ED;
+    color: black;
+}
+
+input[type=radio]:checked + .captain .price-box > div {
+    background-color: #7DFB91;
+    color: black;
+}
+
+input[type=radio]:checked + .general .price-box > div {
+    background-color: #DA396E;
+    color: black;
+}
+
+body {
     background-color: black;
     color: white;
 }
-.titile{
+
+.titile {
     font-size: 50px;
     color: #FFEB00;
     margin-top: 40px;
 }
-.description{
+
+.description {
     margin-top: 20px;
 }
-.body{
+
+.body {
     margin-top: 20px;
 }
-.input-box{
+
+.input-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.input-box label{
+
+.input-box label {
     color: #1EF97B;
 }
-.input-box input{
+
+.input-box input {
     background-color: transparent;
     outline: 0;
     border: 0;
@@ -32,31 +63,15 @@ body{
     padding: 5px;
     color: white;
 }
-.price-group{
+
+.price-group {
     margin: 30px auto;
     width: 60%;
     display: flex;
     justify-content: space-between;
 }
-.price-box:nth-child(2){
-    color: #5FC1ED;
-}
-.price-box:nth-child(2) > div{
-    border: 1px solid #5FC1ED;
-}
-.price-box:nth-child(3){
-    color: #7DFB91;
-}
-.price-box:nth-child(3) > div{
-    border: 1px solid #7DFB91;
-}
-.price-box:nth-child(4){
-    color: #DA396E;
-}
-.price-box:nth-child(4) > div{
-    border: 1px solid #DA396E;
-}
-.price-box > div{
+
+.price-box > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,47 +79,84 @@ body{
     border-radius: 20px;
     padding: 5px 10px;
 }
-.price-box > div > p{
+
+.sergeant .price-box {
+    color: #5FC1ED;
+}
+.sergeant {
+    color: #5FC1ED;
+}
+
+.sergeant .price-box > div {
+    border: 1px solid #5FC1ED;
+}
+
+.captain {
+    color: #7DFB91;
+}
+
+.captain .price-box > div {
+    border: 1px solid #7DFB91;
+}
+
+.general {
+    color: #DA396E;
+}
+
+.general .price-box > div {
+    border: 1px solid #DA396E;
+}
+
+.price-box > div > p {
     margin: 0;
     margin-left: 10px;
 }
-.price-box > h3{
+
+.price-box > h3 {
     font-size: 20px;
     text-align: center;
     margin-top: 10px;
 }
-.doner-title{
+
+.doner-title {
     font-size: 15px;
     color: #FC0C1A;
     margin-top: 20px;
     text-align: center;
 }
-.doner-section{
+
+.doner-section {
     margin-top: 100px;
 }
-.doner-general{
+
+.doner-general {
     margin-top: 40px;
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.doner-general .general-title{
+
+.doner-general .general-title {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.doner-general .general-title i{
+
+.doner-general .general-title i {
     margin-right: 10px;
 }
-.doner-general h3{
+
+.doner-general h3 {
     font-size: 20px;
     font-weight: 400;
 }
-.doner-general .general-title h3{
+
+.doner-general .general-title h3 {
     margin: 0;
     font-size: 20px;
 }
-.doner-general-users{
+
+.doner-general-users {
     display: grid;
     grid-template-columns: auto auto;
     gap: 0px 10px;
@@ -112,11 +164,13 @@ body{
     margin: 0px auto;
     margin-top: 40px;
 }
+
 .doner-general-users > h3 {
     margin-right: 70px;
     text-align: center;
 }
-.doner-captain-users{
+
+.doner-captain-users {
     margin: 0px auto;
     margin-top: 40px;
     display: grid;
@@ -124,10 +178,12 @@ body{
     gap: 20px 0px;
     width: 40%;
 }
-.doner-captain-users > h3{
+
+.doner-captain-users > h3 {
     text-align: center;
 }
-.doner-sergeant-users{
+
+.doner-sergeant-users {
     margin: 0px auto;
     margin-top: 40px;
     display: grid;
@@ -135,6 +191,12 @@ body{
     gap: 20px 0px;
     width: 100%;
 }
-.doner-sergeant-users > h3{
+
+.doner-sergeant-users > h3 {
     text-align: center;
+}
+
+.grid-center{
+    justify-content: center;
+    align-items: center;
 }
