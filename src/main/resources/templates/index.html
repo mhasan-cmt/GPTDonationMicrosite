@@ -110,9 +110,13 @@
                                 <i class="fa-solid fa-star"></i>
                                 <h3>General</h3>
                             </div>
-                            <div class="doner-general-users">
-                                <h3>Jimin Won</h3>
-                                <h3>user2</h3>
+                            <div class="doner-general-users grid-center"
+                                 th:if="${generalDonors == null || generalDonors.size() <= 0}">
+                                <h3 class="general m-0">Be The First General</h3>
+                            </div>
+                            <div class="doner-general-users"
+                                 th:unless="${generalDonors == null || generalDonors.size() <= 0}">
+                                <h3 class="general" th:each="general: ${generalDonors}" th:text="${general.getDonorName()}"></h3>
                             </div>
                         </div>
                         <div class="doner-general">
@@ -120,11 +124,13 @@
                                 <i class="fa-sharp fa-regular fa-golf-flag-hole"></i>
                                 <h3>Captain</h3>
                             </div>
-                            <div class="doner-captain-users">
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
+                            <div class="doner-captain-users grid-center"
+                                 th:if="${captainDonors == null || captainDonors.size() <= 0}">
+                                <h3 class="captain m-0">Be The First Captain</h3>
+                            </div>
+                            <div class="doner-captain-users"
+                                 th:unless="${captainDonors == null || captainDonors.size() <= 0}">
+                                <h3 class="captain" th:each="captain: ${captainDonors}" th:text="${captain.getDonorName()}"></h3>
                             </div>
                         </div>
                         <div class="doner-general">
@@ -132,27 +138,13 @@
                                 <i class="fa-solid fa-gem"></i>
                                 <h3>Sergeant</h3>
                             </div>
-                            <div class="doner-sergeant-users">
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
-                                <h3>user2</h3>
-                                <h3>user1</h3>
+                            <div class="doner-sergeant-users grid-center"
+                                 th:if="${sergeantDonors == null || sergeantDonors.size() <= 0}">
+                                <h3 class="sergeant m-0">Be The First Sergeant</h3>
+                            </div>
+                            <div class="doner-sergeant-users"
+                                 th:unless="${sergeantDonors == null || sergeantDonors.size() <= 0}">
+                                <h3 class="sergeant" th:each="sergeant: ${sergeantDonors}" th:text="${sergeant.getDonorName()}"></h3>
                             </div>
                         </div>
                     </div>

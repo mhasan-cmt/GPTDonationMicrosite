@@ -83,6 +83,9 @@ body {
 .sergeant .price-box {
     color: #5FC1ED;
 }
+.sergeant {
+    color: #5FC1ED;
+}
 
 .sergeant .price-box > div {
     border: 1px solid #5FC1ED;
@@ -191,4 +194,9 @@ body {
 
 .doner-sergeant-users > h3 {
     text-align: center;
+}
+
+.grid-center{
+    justify-content: center;
+    align-items: center;
 }
