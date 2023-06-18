@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,7 +18,7 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-md-8">
-            <form action="">
+            <form action="/checkout" method="post">
                 <h1 class="text-center titile">Fuck All GPT</h1>
                 <p class="text-center description">
                     If you got sick of GPTs, we will act.<br/>
@@ -27,7 +27,7 @@
                 <div class="body">
                     <div class="input-box">
                         <label for="donorsName">You name*</label>
-                        <input type="text" id="donorsName" placeholder="The name will be remembered"/>
+                        <input type="text" id="donorsName" name="donorsName" placeholder="The name will be remembered"/>
                     </div>
                     <div class="d-flex align-items-center justify-content-center my-3">
                         <input type="submit" class="btn btn-success" value="Submit">
@@ -35,7 +35,7 @@
                     <div class="price-group">
                         <input
                                 type="radio"
-                                name="donate-type"
+                                name="donationType"
                                 id="private"
                                 value="PRIVATE"
                                 class="hide"
@@ -52,7 +52,7 @@
                         </label>
                         <input
                                 type="radio"
-                                name="donate-type"
+                                name="donationType"
                                 id="sergeant"
                                 value="SERGEANT"
                                 class="hide"
@@ -68,7 +68,7 @@
                         </label>
                         <input
                                 type="radio"
-                                name="donate-type"
+                                name="donationType"
                                 id="captain"
                                 value="CAPTAIN"
                                 class="hide"
@@ -84,7 +84,7 @@
                         </label>
                         <input
                                 type="radio"
-                                name="donate-type"
+                                name="donationType"
                                 id="general"
                                 value="GENERAL"
                                 class="hide"

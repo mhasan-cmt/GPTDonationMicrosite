@@ -22,6 +22,7 @@ public class Order {
     @Column(name = "approve_url")
     private String approveUrl;
     @Column(name = "donation_type")
+    @Enumerated(EnumType.STRING)
     private DonationType donationType;
     @Column(name = "created_at")
     private LocalDate createdAt;

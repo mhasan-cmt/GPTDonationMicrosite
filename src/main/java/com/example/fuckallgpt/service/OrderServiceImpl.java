@@ -7,13 +7,18 @@ import com.example.fuckallgpt.persistent.entity.Order;
 import com.example.fuckallgpt.exceptions.NoOrderFoundException;
 import com.example.fuckallgpt.persistent.repository.OrderRepository;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
     private final OrderRepository orderRepository;
     private final DonationPricingConfig donationPricingConfig;
+
     @Override
     public Order saveOrder(Order order) {
         return orderRepository.save(order);
@@ -37,5 +42,10 @@ public class OrderServiceImpl implements OrderService {
             }
         }
         return price;
+    }
+
+    @Override
+    public List<Order> getApprovedOrdersByDonationType(DonationType donationType) {
+        return orderRepository.findAllByDonationTypeAndOrderStatusApproved(donationType.toString());
     }
 }

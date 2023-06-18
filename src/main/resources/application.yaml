@@ -8,14 +8,22 @@ spring:
     url: jdbc:mysql://localhost:3306/${DB_NAME}
     username: ${DB_USER}
     password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 paypal:
   baseUrl: https://api-m.sandbox.paypal.com
   clientId: ARnqlr0WMxXg3DQ83L4GpdYDIZ5PMEg-vGIOgEppzFN9drngm6Qm20OQJWu6vRvXe2nHR1QYbIqFY18u
   secret: EF1AkV18uAn1GICIa9KpoC_Jxkdpzv6k75X3ocqCvf7L5a7JV5CxC9HXAXtO_21HtjcOSLMfzF5Kl_lQ
 
+checkout:
+  successUrl: http://localhost:8088/checkout/success
+  cancelUrl: http://localhost:8088/checkout/cancel
+  brandName: Fuck All GPT
+
 donations:
-  privatee: 1
-  sergeant: 5
-  captain: 10
-  general: 100
+  privatee: 1.00
+  sergeant: 5.00
+  captain: 10.00
+  general: 100.00
