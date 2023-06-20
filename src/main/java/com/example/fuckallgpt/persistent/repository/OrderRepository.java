@@ -13,4 +13,6 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     Optional<Order> findByOrderId(String id);
     @Query(value = "SELECT * FROM orders o WHERE o.order_status ='APPROVED' AND donation_type = ?1", nativeQuery = true)
     List<Order> findAllByDonationTypeAndOrderStatusApproved(String donationType);
+
+    Optional<Order> findByDonorName(String name);
 }

@@ -4,11 +4,8 @@ import com.example.fuckallgpt.config.DonationPricingConfig;
 import com.example.fuckallgpt.enumerated.DonationType;
 import com.example.fuckallgpt.exceptions.UnExpectedDonationType;
 import com.example.fuckallgpt.persistent.entity.Order;
-import com.example.fuckallgpt.exceptions.NoOrderFoundException;
 import com.example.fuckallgpt.persistent.repository.OrderRepository;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +23,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order findByOrderId(String id) {
-        return orderRepository.findByOrderId(id).orElseThrow(NoOrderFoundException::new);
+        return orderRepository.findByOrderId(id).orElse(null);
     }
 
     @Override
@@ -42,6 +39,11 @@ public class OrderServiceImpl implements OrderService {
             }
         }
         return price;
+    }
+
+    @Override
+    public Order getOrderByDonorName(String donorName) {
+        return orderRepository.findByDonorName(donorName).orElse(null);
     }
 
     @Override

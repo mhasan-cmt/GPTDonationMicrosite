@@ -10,5 +10,7 @@ public interface OrderService {
     Order saveOrder(Order order);
     Order findByOrderId(String id);
     String getPricesByDonationType(DonationType donationType);
+
+    Order getOrderByDonorName(String donorName);
     List<Order> getApprovedOrdersByDonationType(DonationType donationType);
 }
