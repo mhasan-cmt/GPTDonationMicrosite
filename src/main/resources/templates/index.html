@@ -16,9 +16,9 @@
 </head>
 <body>
 <div class="container">
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-center pb-5">
         <div class="col-md-8">
-            <form action="/checkout" method="post">
+            <form action="/checkout" method="post" id="mainForm">
                 <h1 class="text-center titile">Fuck All GPT</h1>
                 <p class="text-center description">
                     If you got sick of GPTs, we will act.<br/>
@@ -28,9 +28,6 @@
                     <div class="input-box">
                         <label for="donorsName">You name*</label>
                         <input type="text" id="donorsName" name="donorsName" placeholder="The name will be remembered"/>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-center my-3">
-                        <input type="submit" class="btn btn-success" value="Submit">
                     </div>
                     <div class="price-group">
                         <input
@@ -116,7 +113,7 @@
                             </div>
                             <div class="doner-general-users"
                                  th:unless="${generalDonors == null || generalDonors.size() <= 0}">
-                                <h3 class="general" th:each="general: ${generalDonors}" th:text="${general.getDonorName()}"></h3>
+                                <h3 class="general m-2" th:each="general: ${generalDonors}" th:text="${general.getDonorName()}"></h3>
                             </div>
                         </div>
                         <div class="doner-general">
@@ -130,7 +127,7 @@
                             </div>
                             <div class="doner-captain-users"
                                  th:unless="${captainDonors == null || captainDonors.size() <= 0}">
-                                <h3 class="captain" th:each="captain: ${captainDonors}" th:text="${captain.getDonorName()}"></h3>
+                                <h3 class="captain m-2" th:each="captain: ${captainDonors}" th:text="${captain.getDonorName()}"></h3>
                             </div>
                         </div>
                         <div class="doner-general">
@@ -144,7 +141,22 @@
                             </div>
                             <div class="doner-sergeant-users"
                                  th:unless="${sergeantDonors == null || sergeantDonors.size() <= 0}">
-                                <h3 class="sergeant" th:each="sergeant: ${sergeantDonors}" th:text="${sergeant.getDonorName()}"></h3>
+                                <h3 class="sergeant m-2" th:each="sergeant: ${sergeantDonors}" th:text="${sergeant.getDonorName()}"></h3>
+                            </div>
+                        </div>
+
+                        <div class="doner-general">
+                            <div class="general-title">
+                                <i class="fa-solid fa-gem"></i>
+                                <h3>Private</h3>
+                            </div>
+                            <div class="doner-sergeant-users grid-center"
+                                 th:if="${privateDonors == null || privateDonors.size() <= 0}">
+                                <h3 class="sergeant m-0">Be The First Private</h3>
+                            </div>
+                            <div class="doner-sergeant-users"
+                                 th:unless="${privateDonors == null || privateDonors.size() <= 0}">
+                                <h3 class="sergeant m-2" th:each="privateDonor: ${privateDonors}" th:text="${privateDonor.getDonorName()}"></h3>
                             </div>
                         </div>
                     </div>
@@ -153,5 +165,16 @@
         </div>
     </div>
 </div>
+<script>
+    const donorName = document.getElementById('donorsName');
+    const mainForm = document.getElementById('mainForm');
+    donorName.addEventListener('keydown', (evt) => {
+        if (evt.key === 'Enter' && !evt.shiftKey && window.innerWidth > 800) {
+            evt.preventDefault();
+            mainForm.submit();
+            donorName.disabled = true;
+        }
+    });
+</script>
 </body>
 </html>
